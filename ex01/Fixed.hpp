@@ -6,32 +6,33 @@
 /*   By: tblaudez <tblaudez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/23 12:38:04 by tblaudez      #+#    #+#                 */
-/*   Updated: 2020/09/23 13:14:38 by tblaudez      ########   odam.nl         */
+/*   Updated: 2020/10/07 14:28:34 by tblaudez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+
+#include <ostream> // duh..
 
 
 class Fixed {
 
 public:
 
-	Fixed(void);
-	Fixed(Fixed const& src);
+	Fixed();
 	Fixed(int const value);
 	Fixed(float const value);
-	~Fixed(void);
-
+	Fixed(Fixed const& src);
 	Fixed&	operator=(Fixed const& rhs);
+	~Fixed();
 
-	int		getRawBits(void) const;
+	int		getRawBits() const;
+
 	void	setRawBits(int const raw);
-	
-	int		toInt(void) const;
-	float	toFloat(void) const;
+
+	int		toInt() const;
+	float	toFloat() const;
 
 private:
 
